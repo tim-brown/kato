@@ -41,21 +41,23 @@ Metadata fields:
 
 | Field              | Format                                 | Description   |
 |--------------------|----------------------------------------|---------------|
+| `Title`            | string                                 | should be derived from filename |
+| `Id`               | [[:alnum:]/\_-?.]+ (no space)          | hopefully unique (and short) identifier | 
 | `Captured`         | 8601 Date                              | Date captured |
 | `Last-Action`      | {NEXTACTION,REVIEWED,SOMEDAY,DONE,...} |               |
 | `Last-Action-Date` | 8601 Date                              |               |
 | `Schedule`         | 8601 Date range                        | scheduled/deadline or scheduled/ or /deadline |
 | `Remind`           | 8601 Duration                          | Period between reminders on repeating commitments |
-| `Title`            | string                                 | should be derived from filename |
 | `Project`          | string                                 | if not derived from containing folder |
 | `Resources`        | list of _something(?)_                 | what a project might want -- no idea what format |
 | `Actor`            | email                                  | for waiting-on |
 | `Depends`          | id/title                               | for waiting-for |
-| `Id`               | [[:alnum:]/\_-?.]+ (no space)          | hopefully unique (and short) identifier | 
 | `Tags`             | list of tag                            | |
 | `Location`         | Lat/long or description                | where the capture took place, probably |
 | `Purpose`          | string                                 | strongly recommended or compulsory for Project files |
 | `Values`           | string                                 | strongly recommended or compulsory for Project files |
+| `Action-Energy`    | %                                      | psychic energy required for the task |
+| `Action-Time`      | ISO8601-Duration (keep it to HH:MM)    | estimated time required for task |
 
 If a metadata field is found, then a new line (blank line) separates the body text from the header. Otherwise the whole file is body text.
 
